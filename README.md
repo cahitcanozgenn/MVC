@@ -5,4 +5,4 @@ Aşağıda gün gün yaptığım çalışmaları bırakacağım. Bu repodan yola
 
 Hello,
 This repository contains my work with MVC.
-Below I will leave the things I do every day. You can develop your own projects based on this repo. Good coding to you all.
+Below I will leave the things I do every day. You can develop your own projects based on this repo. Good coding to you all. :wink:
