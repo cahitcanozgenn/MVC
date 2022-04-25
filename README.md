@@ -9,4 +9,3 @@ Below I will leave the things I do every day. You can develop your own projects 
 
 
 **1.GÜN-1 DAY** <br>
--MVC GİRİŞ
