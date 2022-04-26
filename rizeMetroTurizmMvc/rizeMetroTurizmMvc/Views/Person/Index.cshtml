@@ -1,0 +1,46 @@
+﻿@using rizeMetroTurizmMvc.Models.Entity
+@model List<person>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>PERSONEL ID</th>
+        <th>PERSONEL T.C. KİMLİK NO</th>
+        <th>PERSONEL ADI</th>
+        <th>PERSONEL SOYADI</th>
+        <th>PERSONEL EHLİYET NUMARASI</th>
+        <th>PERSONEL DOĞUM TARİHİ</th>
+        <th>PERSONEL DOĞUM YERİ</th>
+        <th>PERSONEL IBAN NUMARASI</th>
+        <th>PERSONEL FOTOĞRAFI</th>
+        <th>PERSONEL UNVANI</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+    <tbody>
+        @foreach (var person in Model)
+        {
+        <tr>
+            <td>@person.personId</td>
+            <td>@person.personIdentityNumber</td>
+            <td>@person.personFirstName</td>
+            <td>@person.personLastName</td>
+            <td>@person.personDriverLicenceNumber</td>
+            <td>@person.personBirthDate</td>
+            <td>@person.personPlaceOfBirth</td>
+            <td>@person.personIBAN</td>
+            <td>@person.personImage</td>
+            <td>@person.personDegree</td>
+            <td><a href="~/Views/Person/Update/@person.personId" class="btn btn-success">GÜNCELLE</a></td>
+            <td><a href="~/Views/Person/Delete/@person.personId" class="btn btn-danger">SİL</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="~/Views/Person/AddPerson/" class="btn btn-primary">YENİ PERSONEL EKLE</a>

@@ -1,0 +1,29 @@
+﻿@using rizeMetroTurizmMvc.Models.Entity
+@model List<degree> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<table class="table table-bordered">
+
+    <tr>
+        <th>UNVAN ID</th>
+        <th>UNVAN</th>
+        <th>UNVAN DURUMU</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+   <tbody>
+       @foreach(var degree in Model)
+            {
+       <tr>
+           <td>@degree.degreeId</td>
+           <td>@degree.degree1</td>
+           <td>@degree.degreeStatus</td>
+           <td><a href="~/Views/Degree/Update/@degree.degreeId" class="btn btn-success">GÜNCELLE</a></td>
+           <td><a href="~/Views/Degree/Delete/@degree.degreeId" class="btn btn-danger">SİL</a></td>
+       </tr>
+            }
+   </tbody>
+</table>
+<a href="~/Views/Degree/AddDegree/" class="btn btn-primary">YENİ UNVAN EKLE</a>
