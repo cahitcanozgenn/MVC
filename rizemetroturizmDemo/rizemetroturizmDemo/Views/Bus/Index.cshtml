@@ -1,0 +1,45 @@
+﻿@using rizemetroturizmDemo.Models.Entity
+@model List<bus>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Home/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered text-center">
+    <tr>
+        <th>SIRA NO</th>
+        <th>PLAKA</th>
+        <th>MARKA</th>
+        <th>MODEL</th>
+        <th>YIL</th>
+        <th>KOLTUK SAYISI</th>
+        <th>1.PERSONEL</th>
+        <th>OTOBÜS DURUMU</th>
+        <th>FOTOĞRAF</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+
+
+
+
+    </tr>
+    <tbody>
+        @foreach (var bus in Model)
+        {
+        <tr>
+            <td>@bus.busId</td>
+            <td>@bus.number</td>
+            <td>@bus.brand</td>
+            <td>@bus.model</td>
+            <td>@bus.modelYear</td>
+            <td>@bus.numberofSeats</td>
+            <td>@bus.personal.firstName</td>
+            <td>@bus.busStatus</td>
+            <td>@bus.busImage1</td>
+            <td><button class="btn btn-success">GÜNCELLE</button></td>
+            <td><button class="btn btn-danger">SİL</button></td>
+
+        </tr>
+        }
+    </tbody>
+</table>

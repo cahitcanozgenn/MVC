@@ -1,0 +1,39 @@
+﻿@using rizemetroturizmDemo.Models.Entity
+@model List<expeditions>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Home/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered text-center">
+    <tr>
+        <th>SIRA NO</th>
+        <th>KALKIŞ YERİ</th>
+        <th>VARIŞ YERİ</th>
+        <th>TESİS</th>
+        <th>SEFER DURUMU</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+
+
+
+
+    </tr>
+    <tbody>
+        @foreach (var expeditions in Model)
+        {
+            <tr>
+                <td>@expeditions.expeditionId</td>
+                <td>@expeditions.city.cityName</td>
+                <td>@expeditions.city1.cityName</td>
+                <td>@expeditions.restArea1.restAreaName</td>
+                <td>@expeditions.expeditionStatus</td>
+                <td><button class="btn btn-success">GÜNCELLE</button></td>
+                <td><button class="btn btn-danger">SİL</button></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+

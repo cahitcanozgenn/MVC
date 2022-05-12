@@ -1,0 +1,28 @@
+﻿@using rizemetroturizmDemo.Models.Entity
+@model List<departments> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Home/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered text-center">
+    <tr>
+        <th>SIRA NO</th>
+        <th>DEPATMAN ADI</th>
+        <th>DEPATMAN DURUMU</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+    <tbody>
+        @foreach(var departments in Model)
+            {
+        <tr>
+            <td>@departments.departmentId</td>
+            <td>@departments.departmentName</td>
+            <td>@departments.departmentStatus</td>
+            <td><button class="btn btn-success">GÜNCELLE</button></td>
+            <td><button class="btn btn-danger">SİL</button></td>
+        </tr>
+            }
+    </tbody>
+</table>

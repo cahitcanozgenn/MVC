@@ -215,9 +215,9 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                    with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="~/Views/Personal/Index.cshtml" class="nav-link">
                                 <i class="nav-icon fa fa-people-arrows"></i>
                                 <p>
                                     Personeller
@@ -256,7 +256,7 @@
                                 </p>
                             </a>
                         </li>
-                      
+
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -283,10 +283,12 @@
             </div>
             <!-- /.content-header -->
             <!-- Main content -->
-          
             <!-- /.content -->
+            @RenderBody()
+
         </div>
         <!-- /.content-wrapper -->
+
         <footer class="main-footer">
             <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
             All rights reserved.
@@ -299,7 +301,7 @@
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
         </aside>
-        @RenderBody()
+
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->

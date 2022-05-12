@@ -129,7 +129,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BusController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\ExpeditionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonalController.cs" />
+    <Compile Include="Controllers\RestAreaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2660,6 +2665,11 @@
     <Content Include="AdminLTE-master\plugins\toastr\toastr.js.map" />
     <Content Include="AdminLTE-master\README.md" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Bus\Index.cshtml" />
+    <Content Include="Views\Personal\Index.cshtml" />
+    <Content Include="Views\Expeditions\Index.cshtml" />
+    <Content Include="Views\RestArea\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

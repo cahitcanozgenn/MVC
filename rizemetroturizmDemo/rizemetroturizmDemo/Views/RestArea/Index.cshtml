@@ -1,0 +1,37 @@
+﻿@using rizemetroturizmDemo.Models.Entity
+@model List<restArea>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Home/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered text-center">
+    <tr>
+        <th>SIRA NO</th>
+        <th>TESİS ADI</th>
+        <th>ŞEHİR</th>
+        <th>TESİS DURUMU</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+
+
+
+
+    </tr>
+    <tbody>
+        @foreach (var restArea in Model)
+        {
+            <tr>
+                <td>@restArea.restAreaId</td>
+                <td>@restArea.restAreaName</td>
+                <td>@restArea.city.cityName</td>
+                <td>@restArea.restAreaStatus</td>
+                <td><button class="btn btn-success">GÜNCELLE</button></td>
+                <td><button class="btn btn-danger">SİL</button></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
