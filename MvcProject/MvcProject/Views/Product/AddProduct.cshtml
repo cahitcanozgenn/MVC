@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Home/_MainLayout.cshtml";
+}
+
+<h2>Yeni Ürün Ekleme Sayfası</h2>
+
+<form class="form-group" method="post">
+    <div>
+        <label>ÜRÜN ADI</label>
+        <input type="text" name="productName" class="form-control" />
+        <label>ÜRÜN KATEGORİSİ</label>
+        <input type="text" name="productCategory" class="form-control" />
+        <label>ÜRÜN FİYATI</label>
+        <input type="text" name="productUnitPrice" class="form-control" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">EKLE</button>
+    </div>
+
+</form>
+

@@ -1,0 +1,34 @@
+﻿@using MvcProject.Models.Entity
+@model List<product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Home/_MainLayout.cshtml";
+}
+
+<h2 class="text-center">ÜRÜNLER</h2>
+
+<table class="table table-bordered text-center">
+    <tr>
+        <th class="text-center">SIRA NO</th>
+        <th class="text-center">AD</th>
+        <th class="text-center">KATEGORİ</th>
+        <th class="text-center">FİYAT</th>
+        <th class="text-center">GÜNCELLE</th>
+        <th class="text-center">SİL</th>
+    </tr>
+
+    @foreach (var product in Model)
+    {
+<tr>
+    <th class="text-center">@product.productId</th>
+    <th class="text-center">@product.productName</th>
+    <th class="text-center">@product.productCategory</th>
+    <th class="text-center">@product.productUnitPrice</th>
+    <th class="text-center"><a href="/Update/Update" class="btn btn-primary">GÜNCELLE</a></th>
+    <th class="text-center"><a href="/Delete/Delete" class="btn btn-danger">SİL</a></th>
+
+</tr>
+
+    }
+</table>
+<a href="/Product/AddProduct" class="btn btn-primary">Yeni Ürün Ekle</a>
