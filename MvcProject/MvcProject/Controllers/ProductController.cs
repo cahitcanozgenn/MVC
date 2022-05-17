@@ -49,5 +49,16 @@ namespace MvcProject.Controllers
             var product = db.product.Find(id);
             return View("productList", product);
         }
+        public ActionResult Update(product product)
+        {
+            var products = db.product.Find(product.productId);
+            products.productName = product.productName;
+            products.productCategory = product.productCategory;
+            products.productUnitPrice = product.productUnitPrice;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+        }
     }
 }

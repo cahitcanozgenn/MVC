@@ -40,5 +40,15 @@ namespace MvcProject.Controllers
             var customer = db.customer.Find(id);
             return View("customerList", customer);
         }
+        public ActionResult Update(customer customer)
+        {
+            var customers = db.customer.Find(customer.customerId);
+            customers.firstName = customer.firstName;
+            customers.lastName = customer.lastName;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+
+        }
     }
 }
