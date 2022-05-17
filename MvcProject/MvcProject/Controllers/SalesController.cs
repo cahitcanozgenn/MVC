@@ -27,5 +27,17 @@ namespace MvcProject.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult Delete(int id)
+        {
+            var sales = db.sales.Find(id);
+            db.sales.Remove(sales);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult salesList(int id)
+        {
+            var sales = db.sales.Find(id);
+            return View("salesList", sales);
+        }
     }
 }
