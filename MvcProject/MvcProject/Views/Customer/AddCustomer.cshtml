@@ -1,21 +1,26 @@
-﻿
+﻿@model MvcProject.Models.Entity.customer
 @{
     ViewBag.Title = "AddCustomer";
     Layout = "~/Views/Home/_MainLayout.cshtml";
 }
 
-<h2>Yeni Müşteri Ekleme Sayfası</h2>
-
+<h2>Yeni Kategori Ekleme Sayfası</h2>
 
 <form class="form-group" method="post">
     <div>
         <label>MÜŞTERİ ADI</label>
-        <input type="text" name="firstName" class="form-control" />
+        @Html.TextBoxFor(m => m.firstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.firstName, "", new { @style = "color:red" })
+        <br />
         <label>MÜŞTERİ SOYADI</label>
-        <input type="text" name="lastName" class="form-control" />
+        @Html.TextBoxFor(m => m.lastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.lastName, "", new { @style = "color:red" })
     </div>
+
+
     <div style="margin-top:15px">
         <button class="btn btn-info">EKLE</button>
     </div>
 
 </form>
+

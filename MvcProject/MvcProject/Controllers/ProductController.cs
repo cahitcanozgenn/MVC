@@ -33,6 +33,10 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult AddProduct(product product)
         {
+            if (!ModelState.IsValid) //doğrulama yapılmadıysa
+            {
+                return View("AddProduct");
+            }
             db.product.Add(product);
             db.SaveChanges();
             return View();

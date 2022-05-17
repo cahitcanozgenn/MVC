@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcProject.Models.Entity.category
 @{
     ViewBag.Title = "AddCategory";
     Layout = "~/Views/Home/_MainLayout.cshtml";
@@ -9,8 +9,11 @@
     <form class="form-group" method="post">
         <div>
             <label>KATEGORİ ADI</label>
-            <input type="text" name="categoryName" class="form-control" />
+            @Html.TextBoxFor(m=>m.categoryName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.categoryName,"", new {@style="color:red"})
         </div>
+
+        
         <div style="margin-top:15px">
             <button class="btn btn-info">EKLE</button>
         </div>

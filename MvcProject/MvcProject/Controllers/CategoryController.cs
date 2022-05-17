@@ -23,6 +23,10 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult AddCategory(category category)
         {
+            if(!ModelState.IsValid) //doğrulama yapılmadıysa
+            {
+                return View("AddCategory");
+            }
             db.category.Add(category);
             db.SaveChanges();
             return View();

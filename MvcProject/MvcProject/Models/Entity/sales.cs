@@ -11,13 +11,18 @@ namespace MvcProject.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class sales
     {
         public int salesId { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
         public int product { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
         public int customer { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
         public byte piece { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
         public decimal unitPrice { get; set; }
     
         public virtual customer customer1 { get; set; }

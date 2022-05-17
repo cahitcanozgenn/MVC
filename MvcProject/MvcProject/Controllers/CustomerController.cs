@@ -24,6 +24,10 @@ namespace MvcProject.Controllers
         [HttpPost]
         public ActionResult AddCustomer(customer customer)
         {
+            if (!ModelState.IsValid) //doğrulama yapılmadıysa
+            {
+                return View("AddCustomer");
+            }
             db.customer.Add(customer);
             db.SaveChanges();
             return View();

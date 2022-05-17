@@ -11,7 +11,8 @@ namespace MvcProject.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,11 @@ namespace MvcProject.Models.Entity
         }
     
         public int customerId { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
+        [StringLength(30,ErrorMessage ="Lütfen 30 karakterden fazla deðer girmeyiniz!!!")]
         public string firstName { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
+        [StringLength(30, ErrorMessage = "Lütfen 30 karakterden fazla deðer girmeyiniz!!!")]
         public string lastName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -11,7 +11,8 @@ namespace MvcProject.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,12 @@ namespace MvcProject.Models.Entity
         }
     
         public int productId { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
+        [StringLength(30, ErrorMessage = "Lütfen 30 karakterden fazla deðer girmeyiniz!!!")]
         public string productName { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
         public int productCategory { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
         public decimal productUnitPrice { get; set; }
     
         public virtual category category { get; set; }

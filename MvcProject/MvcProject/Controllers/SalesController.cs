@@ -18,6 +18,10 @@ namespace MvcProject.Controllers
         [HttpGet]
         public ActionResult AddSales()
         {
+            if (!ModelState.IsValid) //doğrulama yapılmadıysa
+            {
+                return View("AddSales");
+            }
             return View();
         }
         [HttpPost]

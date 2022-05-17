@@ -11,7 +11,8 @@ namespace MvcProject.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +20,10 @@ namespace MvcProject.Models.Entity
         {
             this.product = new HashSet<product>();
         }
-    
+
         public int categoryId { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ býrakýlamaz!!!")]
+        [StringLength(20, ErrorMessage = "Lütfen 20 karakterden fazla deðer girmeyiniz!!!")]
         public string categoryName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
