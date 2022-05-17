@@ -19,6 +19,15 @@ namespace MvcProject.Controllers
         [HttpGet]
         public ActionResult AddProduct()
         {
+            //Listeden öğe seç.
+            List<SelectListItem> values = (from i in db.category.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = i.categoryName,
+                                               Value = i.categoryId.ToString()
+                                           }).ToList();
+            ViewBag.values = values; // diğer sayfaya değer taşıma
+                                           
             return View();
         }
         [HttpPost]
