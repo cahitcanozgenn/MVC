@@ -1,6 +1,6 @@
 ﻿@model MvcProject.Models.Entity.product
 @{
-    ViewBag.Title = "AddCategory";
+    ViewBag.Title = "AddProduct";
     Layout = "~/Views/Home/_MainLayout.cshtml";
 }
 
@@ -13,7 +13,7 @@
         <label>ÜRÜN KATEGORİSİ</label>
        @Html.DropDownListFor(m => m.productCategory,(List<SelectListItem>)ViewBag.values,new { @class = "form-control" })
         <label>ÜRÜN FİYATI</label>
-        <input type="text" name="productUnitPrice" class="form-control" />
+        <input type="text" name="productUnitPrice" class="form-control"  />
     </div>
     <div style="margin-top:15px">
         <button class="btn btn-info">EKLE</button>
