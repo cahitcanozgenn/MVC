@@ -1,5 +1,7 @@
 ﻿@using MvcProject.Models.Entity
-@model List<customer>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<customer>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Home/_MainLayout.cshtml";
@@ -18,15 +20,16 @@
 
     @foreach (var customer in Model)
     {
-<tr>
-    <th class="text-center">@customer.customerId</th>
-    <th class="text-center">@customer.firstName</th>
-    <th class="text-center">@customer.lastName</th>
-    <th class="text-center"><a href="/Customer/customerList/@customer.customerId" class="btn btn-primary">GÜNCELLE</a></th>
-    <th class="text-center"><a href="/Customer/Delete/@customer.customerId" class="btn btn-danger">SİL</a></th>
+        <tr>
+            <th class="text-center">@customer.customerId</th>
+            <th class="text-center">@customer.firstName</th>
+            <th class="text-center">@customer.lastName</th>
+            <th class="text-center"><a href="/Customer/customerList/@customer.customerId" class="btn btn-primary">GÜNCELLE</a></th>
+            <th class="text-center"><a href="/Customer/Delete/@customer.customerId" class="btn btn-danger">SİL</a></th>
 
-</tr>
+        </tr>
 
     }
 </table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 <a href="/Customer/AddCustomer" class="btn btn-primary">Yeni Müşteri Ekle</a>
