@@ -3,7 +3,7 @@
     ViewBag.Title = "AddCategory";
     Layout = "~/Views/Home/_MainLayout.cshtml";
 }
-
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <h2>Yeni Ürün Ekleme Sayfası</h2>
 
 <form class="form-group" method="post">
@@ -18,8 +18,13 @@
         <input type="text" name="unitPrice" class="form-control" />
     </div>
     <div style="margin-top:15px">
-        <button class="btn btn-info">EKLE</button>
+        <button class="btn btn-info"  id="button">EKLE</button>
     </div>
+    <script>
+        $('#button').click(function () {
+            alert('Satış Ekleme İşlemi Başarıyla Tamamlandı.');
+        });
+    </script>
 
 </form>
 
