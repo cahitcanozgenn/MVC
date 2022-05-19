@@ -25,7 +25,7 @@
             <th class="text-center">@customer.firstName</th>
             <th class="text-center">@customer.lastName</th>
             <th class="text-center"><a href="/Customer/customerList/@customer.customerId" class="btn btn-primary">GÜNCELLE</a></th>
-            <th class="text-center"><a href="/Customer/Delete/@customer.customerId" class="btn btn-danger">SİL</a></th>
+            <th class="text-center"><a href="/Customer/Delete/@customer.customerId" class="btn btn-danger" onclick="return confirm('Gerçekten Silmek İstiyor Musunuz?')">SİL</a></th>
 
         </tr>
 
