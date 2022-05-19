@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 using MvcProject.Models.Entity;
 
 namespace MvcProject.Controllers
@@ -11,9 +13,9 @@ namespace MvcProject.Controllers
     {
         // GET: Product
         MvcProjectDBEntities db = new MvcProjectDBEntities();
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            var values = db.product.ToList();
+            var values = db.product.ToList().ToPagedList(page, 5);
             return View(values);
         }
         [HttpGet]

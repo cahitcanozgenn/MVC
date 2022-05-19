@@ -14,7 +14,7 @@ namespace MvcProject.Controllers
         MvcProjectDBEntities db = new MvcProjectDBEntities();
         public ActionResult Index(int page=1)
         {
-            var values = db.category.ToList().ToPagedList(page, 4);
+            var values = db.category.ToList().ToPagedList(page, 5);
             return View(values);
         }
         [HttpGet]

@@ -1,5 +1,7 @@
 ﻿@using MvcProject.Models.Entity
-@model List<product>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Home/_MainLayout.cshtml";
@@ -19,16 +21,17 @@
 
     @foreach (var product in Model)
     {
-<tr>
-    <th class="text-center">@product.productId</th>
-    <th class="text-center">@product.productName</th>
-    <th class="text-center">@product.category.categoryName</th>
-    <th class="text-center">@product.productUnitPrice</th>
-    <th class="text-center"><a href="/Product/productList/@product.productId" class="btn btn-primary">GÜNCELLE</a></th>
-    <th class="text-center"><a href="/Product/Delete/@product.productId" class="btn btn-danger">SİL</a></th>
+        <tr>
+            <th class="text-center">@product.productId</th>
+            <th class="text-center">@product.productName</th>
+            <th class="text-center">@product.category.categoryName</th>
+            <th class="text-center">@product.productUnitPrice</th>
+            <th class="text-center"><a href="/Product/productList/@product.productId" class="btn btn-primary">GÜNCELLE</a></th>
+            <th class="text-center"><a href="/Product/Delete/@product.productId" class="btn btn-danger">SİL</a></th>
 
-</tr>
+        </tr>
 
     }
 </table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 <a href="/Product/AddProduct" class="btn btn-primary">Yeni Ürün Ekle</a>
