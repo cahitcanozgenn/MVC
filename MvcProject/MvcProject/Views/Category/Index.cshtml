@@ -22,11 +22,12 @@
         <tr>
             <th class="text-center">@category.categoryId</th>
             <th class="text-center">@category.categoryName</th>
-            <th class="text-center"><a href="/Category/categoryList/@category.categoryId" class="btn btn-primary">GÜNCELLE</a></th>
-            <th class="text-center"><a href="/Category/Delete/@category.categoryId" class="btn btn-danger">SİL</a></th>
+            <th class="text-center"><a href="/Category/categoryList/@category.categoryId" class="btn btn-primary" >GÜNCELLE</a></th>
+            <th class="text-center"><a href="/Category/Delete/@category.categoryId" class="btn btn-danger" onclick="return confirm('Gerçekten Silmek İstiyor Musunuz?')">SİL</a></th>
+           
         </tr>
 
-    }
+}
 </table>
 
 @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
