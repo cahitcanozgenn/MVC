@@ -1,5 +1,7 @@
 ﻿@using MvcProject.Models.Entity
-@model List<sales>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<sales>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Home/_MainLayout.cshtml";
@@ -20,17 +22,18 @@
 
     @foreach (var sales in Model)
     {
-<tr>
-    <th class="text-center">@sales.salesId</th>
-    <th class="text-center">@sales.product1.productName</th>
-    <th class="text-center">@sales.customer1.firstName @sales.customer1.lastName</th>
-    <th class="text-center">@sales.piece</th>
-    <th class="text-center">@sales.unitPrice</th>
-    <th class="text-center"><a href="/Sales/Update/@sales.salesId" class="btn btn-primary">GÜNCELLE</a></th>
-    <th class="text-center"><a href="/Sales/Delete/@sales.salesId" class="btn btn-danger">SİL</a></th>
+        <tr>
+            <th class="text-center">@sales.salesId</th>
+            <th class="text-center">@sales.product1.productName</th>
+            <th class="text-center">@sales.customer1.firstName @sales.customer1.lastName</th>
+            <th class="text-center">@sales.piece</th>
+            <th class="text-center">@sales.unitPrice</th>
+            <th class="text-center"><a href="/Sales/Update/@sales.salesId" class="btn btn-primary">GÜNCELLE</a></th>
+            <th class="text-center"><a href="/Sales/Delete/@sales.salesId" class="btn btn-danger">SİL</a></th>
 
-</tr>
+        </tr>
 
     }
 </table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 <a href="/Sales/AddSales" class="btn btn-primary">Satış Yap</a>
