@@ -4,15 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcProject.Models.Entity;
+using PagedList;
+using PagedList.Mvc;
 namespace MvcProject.Controllers
 {
     public class CategoryController : Controller
     {
         // GET: Category
         MvcProjectDBEntities db = new MvcProjectDBEntities();
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
-            var values = db.category.ToList();
+            //var values = db.category.ToList();
+            var values = db.category.ToList().ToPagedList(page, 4);
             return View(values);
         }
         [HttpGet]

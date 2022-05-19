@@ -1,5 +1,7 @@
 ﻿@using MvcProject.Models.Entity
-@model List<category>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Home/_MainLayout.cshtml";
@@ -14,17 +16,19 @@
         <th class="text-center">GÜNCELLE</th>
         <th class="text-center">SİL</th>
     </tr>
-  
-        @foreach(var category in Model)
-            {
-<tr>
-    <th class="text-center">@category.categoryId</th>
-    <th class="text-center">@category.categoryName</th>
-    <th class="text-center"><a href="/Category/categoryList/@category.categoryId" class="btn btn-primary">GÜNCELLE</a></th>
-    <th class="text-center"><a href="/Category/Delete/@category.categoryId" class="btn btn-danger">SİL</a></th>
-</tr>
-          
-            }
+
+    @foreach (var category in Model)
+    {
+        <tr>
+            <th class="text-center">@category.categoryId</th>
+            <th class="text-center">@category.categoryName</th>
+            <th class="text-center"><a href="/Category/categoryList/@category.categoryId" class="btn btn-primary">GÜNCELLE</a></th>
+            <th class="text-center"><a href="/Category/Delete/@category.categoryId" class="btn btn-danger">SİL</a></th>
+        </tr>
+
+    }
 </table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 <a href="/Category/AddCategory" class="btn btn-primary">Yeni Kategori Ekle</a>
 

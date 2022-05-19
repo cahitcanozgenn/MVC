@@ -80,3 +80,7 @@ C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\obj\Debug\MvcProje
 C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\obj\Debug\MvcProject.csproj.CoreCompileInputs.cache
 C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\obj\Debug\MvcProject.dll
 C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\obj\Debug\MvcProject.pdb
+C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\bin\PagedList.dll
+C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\bin\PagedList.Mvc.dll
+C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\bin\PagedList.xml
+C:\Users\Cahit Can\Documents\GitHub\MVC\MvcProject\MvcProject\bin\PagedList.Mvc.xml
