@@ -6,25 +6,24 @@
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <h2>Yeni Satış Ekleme Sayfası</h2>
 
-<form class="form-group" method="post">
-    <div>
-        <label>ÜRÜN</label>
-        <input type="text" name="product" class="form-control" />
-        <label>MÜŞTERİ</label>
-        <input type="text" name="customer" class="form-control" />
-        <label>ADET</label>
-        <input type="text" name="piece" class="form-control" />
-        <label>FİYAT</label>
-        <input type="text" name="unitPrice" class="form-control" />
-    </div>
-    <div style="margin-top:15px">
-        <button class="btn btn-info"  id="button">EKLE</button>
-    </div>
-    <script>
-        $('#button').click(function () {
-            alert('Satış Ekleme İşlemi Başarıyla Tamamlandı.');
-        });
-    </script>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Model1">SATIŞ YAP</button>
 
-</form>
-
+<div class="modal" id="Model1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Satış Yap</h3>
+            </div>
+            <form class="form-group" >
+                <div class="modal-body">
+                    <label>Ürün</label>
+                    <input type="text" name="product" class="form-control" />
+                    <label>Müşteri</label>
+                    <input type="text" name="customer" class="form-control" />
+                    <label>Adet</label>
+                    <input type="text" name="piece" class="form-control" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
